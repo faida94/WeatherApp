@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faida's Weather App</title>
+  </head>
+  <style>
+    h1 {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 40px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: 400;
+    }
+
+    h2{
+
+      margin-top: 20px;
+      text-align: center;
+      font-size: 40px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: 400;
+
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 28px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: 400;
+    }
+
+    ul {
+      margin: 0 auto;
+    }
+
+    button {
+      font-size: 18px;
+      background: #fcdee3;
+      color: #363636;
+      display: block;
+      padding: 10px 20px;
+      margin: 0 auto;
+      margin-top: 20px;
+      border: 1px solid #ff1178;
+      border-radius: 50px 50px;
+      box-shadow: 1px 3px 3px #acaaae;
+      transition: all 200ms ease-in-out;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: 500;
+    }
+
+    button:hover {
+      background: #e8a9d1;
+      color: #3d2b39;
+      cursor: pointer;
+    }
+    body {
+      background-color: #fcdee3;
+      margin: 0 auto;
+    }
+
+    span {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: 300;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+      font-size: 25px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: 400;
+    }
+
+    p {
+      text-align: center;
+      font-size: small;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: 100;
+    }
+
+    .joburg {
+      font-weight: 600;
+    }
+
+    .sunny {
+      text-align: center;
+      font-size: 50px;
+    }
+    .cloudy {
+      text-align: center;
+      font-size: 23px;
+      padding: 20px 8px 20px 8px;
+      display: block;
+      margin: 0 auto;
+      margin-right: 350px;
+      margin-left: 350px;
+      border-radius: 10px 10px;
+      transition: all 200ms ease-in-out;
+    }
+
+    .cloudy:hover {
+      color: black;
+      background: #ffb0ca;
+      opacity: 0.5;
+    }
+
+    .cold {
+      font-weight: 600;
+    }
+
+    .partlysun {
+      text-align: center;
+      font-size: 23px;
+      padding: 20px 8px 20px 8px;
+      display: block;
+      margin: 0 auto;
+      margin-right: 350px;
+      margin-left: 350px;
+      border-radius: 10px 10px;
+      transition: all 200ms ease-in-out;
+    }
+
+    .partlysun:hover {
+      color: black;
+      background: #ffb0ca;
+      opacity: 0.5;
+    }
+
+    .warm {
+      font-weight: 600;
+    }
+
+    .rain {
+      text-align: center;
+      font-size: 23px;
+      padding: 20px 8px 20px 8px;
+      display: block;
+      margin: 0 auto;
+      margin-right: 350px;
+      margin-left: 350px;
+      border-radius: 10px 10px;
+      transition: all 200ms ease-in-out;
+    }
+
+    .rain:hover {
+      color: black;
+      background: #ffb0ca;
+      opacity: 0.5;
+    }
+
+    .wet {
+      font-weight: 600;
+    }
+
+    .clear {
+      margin-top: 20px;
+    }
+
+    .heat {
+      margin-top: 20px;
+    }
+
+    .wind {
+      margin-top: 20px;
+    }
+  </style>
+  <body>
+    <h1>
+      🌤
+</h1>
+      <h2>Currently 26° in Johannesburg</h2>
+    
+    <h3><span>16° / </span><span class="joburg"> 24°</span></h3>
+
+    <ul>
+      <div class="cloudy">
+        <li>⛅️ Tomorrow</li>
+        <div class="clear"></div>
+          <span>10°</span> <span class="cold"> / 22°</span>
+        </div>
+      </div>
+      <br />
+      <div class="partlysun">
+        <li>🌤 Saturday</li>
+        <div class="heat"></div>
+        <span>12°</span> <span class="warm"> / 17°</span>
+      </div>
+      </div>
+      <br />
+      <div class="rain">
+        <li>⛈ Sunday</li>
+        <div class="wind"></div>
+          <span>23°</span> <span class="wet"> / 30°</span>
+      </div>
+      </div>
+    </ul>
+    <button>Change City</button>
+    <br />
+<script>
+
+let temperature;
+
+  function updateHeading (newHeading){
+    let heading = document.querySelector("h2");
+    heading.innerHTML = newHeading;
+  }
+
+  function EmojiHeader2 (newHeading2){
+    let heading = document.querySelector("h1");
+    heading.innerHTML = newHeading2;
+  }
+
+function newTemp(){
+   
+  if (temperature >= 20){
+    return true;
+}
+return false;
+}
+function changecity(){
+  let currentcity = prompt ("What is your current city ? "); 
+  temperature = prompt ("What is your current temperature in your city ? "); 
+
+  if (newTemp(temperature)){
+    EmojiHeader2("😊")
+    updateHeading(` Currently ${temperature} °C  in ${currentcity}`);
+  }
+  else{
+    EmojiHeader2("😭")
+    updateHeading(` Currently ${temperature} °C  in ${currentcity}`);
+  }
+}
+let CityButton = document.querySelector("button");
+CityButton.addEventListener("click",changecity);
+</script>
+
+    <p>Coded by Your Girl: <strong>Faida Chikwatu</strong>👩🏾‍💻</p>
+  </body>
+</html>
